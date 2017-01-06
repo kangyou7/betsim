@@ -19,11 +19,13 @@ public class BetsimController {
     }
 
 	@RequestMapping("/betsim")
-    public String getBetsimResult(BetsimBean in) {
+    public String getBetsimResult(BetsimBean req) {
 		
-		log.info(in.toString());
+		log.info(req.toString());
 		
-        return "Greetings from Spring Boot!";
+		Betsim b = new Betsim();
+		
+        return b.getSimulResult(req);
     }
 	
 }
