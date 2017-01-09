@@ -7,7 +7,7 @@ public class BetsimBean extends CommonVO {
 	private int probability;	//당첨 확율
 	private float deposit;	//예치금
 	private int rollNumber; //예치금을 나눈 수
-	private int multiNumber; //1,2,3,...배
+	private float multiNumber; //1,2,3,...배
 	
 	public float getAverageOdds() {
 		return averageOdds;
@@ -33,10 +33,10 @@ public class BetsimBean extends CommonVO {
 	public void setRollNumber(int rollNumber) {
 		this.rollNumber = rollNumber;
 	}
-	public int getMultiNumber() {
+	public float getMultiNumber() {
 		return multiNumber;
 	}
-	public void setMultiNumber(int multiNumber) {
+	public void setMultiNumber(float multiNumber) {
 		this.multiNumber = multiNumber;
 	}
 	

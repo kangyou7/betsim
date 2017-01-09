@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dongak.betinfo.domain.BetsimBean;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 import ch.qos.logback.classic.Logger;
 
@@ -19,9 +20,9 @@ public class BetsimController {
     }
 
 	@RequestMapping("/betsim")
-    public String getBetsimResult(BetsimBean req) {
+    public String getBetsimResult(BetsimBean req) throws JsonProcessingException {
 		
-		log.info(req.toString());
+		log.info("\n"+req.toString());
 		
 		Betsim b = new Betsim();
 		
