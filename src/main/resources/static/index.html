@@ -29,33 +29,33 @@
 			<div class="col-md-6">
 				<form>
 					<div class="input-group">
-						<span class="input-group-addon" id="deposit">deposit</span> <input
-							type="number" class="form-control" placeholder="0"
-							aria-describedby="deposit">
+						<span class="input-group-addon" id="addon1">deposit</span> <input
+							type="number" class="form-control" placeholder="1000"
+							id="deposit">
 					</div>
 					<p class="help-block">여기에 블록레벨 도움말 예제</p>
 					<div class="input-group">
-						<span class="input-group-addon" id="average-odd">average
+						<span class="input-group-addon" id="addon2">average
 							odd</span> <input type="number" class="form-control" placeholder="1.5"
-							aria-describedby="average-odd">
+							id="average-odd">
 					</div>
 					<p class="help-block">여기에 블록레벨 도움말 예제</p>
 					<div class="input-group">
-						<span class="input-group-addon" id="success-probability">success
+						<span class="input-group-addon" id="addon3">success
 							probability</span> <input type="number" class="form-control"
-							placeholder="50" aria-describedby="success-probability">
+							placeholder="50" id="success-probability">
 					</div>
 					<p class="help-block">여기에 블록레벨 도움말 예제</p>
 					<div class="input-group">
-						<span class="input-group-addon" id="roll-number">roll
+						<span class="input-group-addon" id="addon4">roll
 							number</span> <input type="number" class="form-control" placeholder="5"
-							aria-describedby="roll-number">
+							id="roll-number">
 					</div>
 					<p class="help-block">여기에 블록레벨 도움말 예제</p>
 					<div class="input-group">
-						<span class="input-group-addon" id="multi-number">multiple
+						<span class="input-group-addon" id="addon5">multiple
 							number</span> <input type="number" class="form-control" placeholder="2"
-							aria-describedby="multi-number">
+							id="multi-number">
 					</div>
 					<p class="help-block">여기에 블록레벨 도움말 예제</p>
 					<button type="button" class="btn btn-primary">calculate</button>
@@ -63,8 +63,9 @@
 				</form>
 			</div>
 			<div class="col-md-6">
+			<h4 class="text-center">result of simulation</h4>
 			<hr></hr>
-			<textarea class="form-control" rows="5"></textarea>
+			<textarea class="form-control" rows="2"></textarea>
 			</div>
 		</div>
 	</div>
@@ -74,6 +75,26 @@
 	<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$(".btn-primary").click(function() {
+			$.ajax({
+				url:"http://localhost:8080/betsim", 
+				method:"get",
+				data:{ 
+						deposit : $("#deposit").val(),
+						averageOdds : $("#average-odd").val(),
+						probability : $("#success-probability").val(),
+						rollNumber : $("#roll-number").val(),
+						multiNumber : $("#multi-number").val()
+     				 },
+     			dataType:"json"
+			})
+     		.done(function(data) {
+				alert("Data Loaded: " + data);
+			});
+		});
+	</script>
 </body>
 
 </html>
