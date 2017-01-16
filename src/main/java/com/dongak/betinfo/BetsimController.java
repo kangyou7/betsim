@@ -13,11 +13,7 @@ import ch.qos.logback.classic.Logger;
 public class BetsimController {
 	
 	private static final Logger log = (Logger) LoggerFactory.getLogger(BetsimController.class);
-	
-	@RequestMapping("/")
-    public String index() {
-        return "Greetings from Spring Boot!";
-    }
+
 
 	@RequestMapping("/betsim")
     public String getBetsimResult(BetsimBean req) throws JsonProcessingException {
