@@ -82,40 +82,14 @@
     
     <script type="text/javascript">
     $(".btn-primary").click(function() {
-    	
-    	/*
-    	if($("#deposit").val().length <=0) {
-    		alert("deposit is requred");
-    		$("#deposit").val(1000);
-    	}
-    	
-    	if($("#average-odd").val().length <=0) {
-    		alert("average-odd is requred");
-    		$("#average-odd").val(1.5);
-    	}
 
-    	if($("#success-probability").val().length <=0) {
-    		alert("success-probability is requred");
-    		$("#success-probability").val(75);
-    	}
-
-    	if($("#roll-number").val().length <=0) {
-    		alert("roll-number is requred");
-    		$("#roll-number").val(20);
-    	}
-    	
-    	if($("#multi-number").val().length <=0) {
-    		alert("multi-number is requred");
-    		$("#multi-number").val(2);
-    	}
-        */
-        validation();
+    	validation();
     	
     	$("table").empty();
     	$("#result").empty();
     	
         $.ajax({
-                url: "http://localhost:8080/betsim",
+                url: "https://betinfo.herokuapp.com/betsim",
                 method: "get",
                 data: {
                     deposit: $("#deposit").val(),
