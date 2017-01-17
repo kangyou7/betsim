@@ -104,6 +104,9 @@ public class Betsim {
 
 		System.out.println("netCount=" + netCount);
 		System.out.println(objectMapper.writeValueAsString(objList));
+		System.out.println("======================================================");
+		System.out.println(objectMapper.writeValueAsString(out));
+		System.out.println("======================================================");
 
 		return objectMapper.writeValueAsString(out);
 	}
