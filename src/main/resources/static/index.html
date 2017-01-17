@@ -101,10 +101,8 @@
                 dataType: "json"
             })
             .done(function(data) {
-                console.log(data.percent);
                 var html="<tr><th>#</th><th>n bet</th><th>balance</th></tr>";
                 $.each(data.list,function(index,item) {
-                	console.log(item.try+":"+item.th+":"+item.balance);
                	    html = html+"<tr><td>"+item.try+"</td><td>"+item.th+"</td><td>"+item.balance+"</td></tr>";
                 });
                $("#result").append(" "+data.percent+" %");
